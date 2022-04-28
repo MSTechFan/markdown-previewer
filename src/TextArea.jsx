@@ -1,10 +1,14 @@
-import {React, useState} from 'react'
+import {React} from 'react'
 
-const TextArea = ( text ) => {
+const TextArea = ( text, setText ) => {
+    console.log(text)
+
+    const onChange = (e) => {
+        text.setText(e.currentTarget.value)
+    }
+
     return (
-        <textArea id='editor' style={{flex: 1}}>
-            {text}
-        </textArea>
+        <textArea id='editor' style={{flex: 1}} onChange={onChange}>{text.text}</textArea>
     )
 }
 
